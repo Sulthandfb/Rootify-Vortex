@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                  VALUES ('$start_date', '$end_date', '$trip_type', '$budget', '$interests')";
     mysqli_query($db, $sql_trip);
 
-    // Query untuk mengambil tempat wisata berdasarkan preferensi
+    // Query untuk mengambil tempat wisata berdasarkan preferensi secara acak
     $interest_query_parts = [];
     foreach (explode(',', $interests) as $interest) {
         $interest_query_parts[] = "FIND_IN_SET('$interest', interests_tags)";
@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             WHERE FIND_IN_SET('$trip_type', trip_types) 
                             AND budget_range = '$budget' 
                             AND ($interest_query) 
-                            AND kategori != 'Restoran'";  // Hanya tempat wisata, bukan restoran
+                            AND kategori != 'Restoran'
+                            ORDER BY RAND()"; // Mengacak hasil
     $result = mysqli_query($db, $sql_recommendations);
 
     // Simpan hasil rekomendasi dalam array
@@ -98,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <div class="card-content">
                                             <h3><?= $place['nama'] ?></h3>
                                             <div class="category">
-                                                <p><img src="../img/leaf.png" alt="leaf"> <?= $place['kategori'] ?></p>
+                                                <p><img src="../img/bookmark.png" alt="bookmark"> <?= $place['kategori'] ?></p>
                                             </div>
                                             <p><strong>Rating:</strong>
                                                 <span id="rating-<?= $place['id_wisata'] ?>"></span> <!-- Tempat untuk bintang -->
@@ -157,16 +158,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            <?= json_encode($recommendations) ?>.forEach(place => {
-                const ratingContainer = document.getElementById(`rating-${place.id_wisata}`);
-                if (ratingContainer) {
-                    const stars = createStarRating(place.rating);
-                    ratingContainer.appendChild(stars);
-                }
+            // Loop melalui setiap hari dalam itinerary
+            <?= json_encode($daily_itinerary) ?>.forEach((dayPlaces, dayIndex) => {
+                dayPlaces.forEach(place => {
+                    const ratingContainer = document.getElementById(`rating-${place.id_wisata}`);
+                    if (ratingContainer) {
+                        const stars = createStarRating(place.rating); // Buat elemen bintang berdasarkan rating
+                        ratingContainer.appendChild(stars);
+                    }
+                });
             });
 
             toggleDay(0); // Buka hari pertama secara default
         });
+
 
         function toggleDay(dayNumber) {
             const content = document.getElementById(`day-${dayNumber}`);
