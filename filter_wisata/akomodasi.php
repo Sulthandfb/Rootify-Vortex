@@ -1,6 +1,8 @@
 <?php 
 session_start();
-include "../filter_wisata/db_connect.php"; // Pastikan file db_connect.php berada di direktori yang sama
+include "db_connect.php"; // Pastikan file db_connect.php berada di direktori yang sama
+
+
 
 ?>
 
@@ -10,7 +12,7 @@ include "../filter_wisata/db_connect.php"; // Pastikan file db_connect.php berad
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akomodasi</title>
-    <link rel="stylesheet" href="akomodasi.css">
+    <link rel="stylesheet" href="../akomodasi/akomodasi.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
