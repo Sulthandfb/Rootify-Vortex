@@ -78,6 +78,7 @@ img {
 
 a {
   text-decoration: none;
+  color: var(--text-dark);
 }
 
 .logo {
@@ -94,7 +95,7 @@ body {
 }
 
 .header {
-  background-image: url("../img/jalan.jpg");
+  background-color: #fff;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -173,7 +174,7 @@ nav.scrolled .nav__links a {
   position: relative;
   isolation: isolate;
   padding-bottom: 8px;
-  color: var(--white);
+  color: var(--text-dark);
   transition: 0.3s;
 }
 
@@ -675,7 +676,7 @@ form button.btn {
   }
   
   .nav__links a {
-    color: #fff;
+    color: #000000;
     transition: color 0.3s ease;
   }
   
