@@ -27,7 +27,7 @@
                     <li><a href="#">Bantuan</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <a href="/regristasi/login.php" class="btn">Login</a>
+                    <a href="../regristasi/login.php" class="btn">Login</a>
                     <a href="#" class="btn">Daftar</a>
                 </div>
             </div>
