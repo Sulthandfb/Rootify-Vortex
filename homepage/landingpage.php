@@ -27,7 +27,7 @@
                     <li><a href="#">Bantuan</a></li>
                 </ul>
                 <div class="nav-buttons">
-                    <a href="/regristasi/login.html" class="btn">Login</a>
+                    <a href="/regristasi/login.php" class="btn">Login</a>
                     <a href="#" class="btn">Daftar</a>
                 </div>
             </div>
@@ -269,7 +269,7 @@
         </div>
     </div>
 
-    <div class="review-container">
+<!--    <div class="review-container">
         <h2>Review Aplikasi(masih gambar kasar/pakai ai)</h2>
         <div class="review-cards-container">
             <div class="review-card">
@@ -323,7 +323,140 @@
                 <p class="review-text">"Interface-nya user friendly dan mudah digunakan. Banyak pilihan destinasi wisata yang menarik."</p>
             </div>
         </div>
+    </div>-->
+<style>
+        .review-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .review-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .review-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .reviewer-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #4a5568;
+        }
+
+        .reviewer-info h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+
+        .rating {
+            color: #fbbf24;
+        }
+
+        .review-text {
+            color: #666;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .review-cards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .review-card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="review-container">
+        <h2>Review Aplikasi</h2>
+        <div class="review-cards-container">
+            <div class="review-card">
+                <div class="reviewer-profile">
+                    <img src="ugm.png" alt="User" class="reviewer-avatar">
+                    <div class="reviewer-info">
+                        <h4>John Doe</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Aplikasi yang sangat membantu untuk merencanakan liburan di Jogja. Paket wisatanya lengkap dan harganya terjangkau!"</p>
+            </div>
+
+            <div class="review-card">
+                <div class="reviewer-profile">
+                    <img src="ugm.png" alt="User" class="reviewer-avatar">
+                    <div class="reviewer-info">
+                        <h4>Jane Smith</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Pelayanan sangat baik dan responsif. Tour guide-nya ramah dan professional. Recommended!"</p>
+            </div>
+
+            <div class="review-card">
+                <div class="reviewer-profile">
+                    <img src="ugm.png" alt="User" class="reviewer-avatar">
+                    <div class="reviewer-info">
+                        <h4>David Wilson</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Interface-nya user friendly dan mudah digunakan. Banyak pilihan destinasi wisata yang menarik."</p>
+            </div>
+        </div>
     </div>
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
