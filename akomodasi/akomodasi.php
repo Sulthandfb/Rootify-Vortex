@@ -36,7 +36,7 @@
     <nav class="secondary-navbar">
         <div class="nav-container">
             <ul class="secondary-nav-links">
-                <li><a href="/homepage/yusuf.html" class="secondary-nav-link">Home</a></li>
+                <li><a href="../homepage/landingpage.php" class="secondary-nav-link">Home</a></li>
                 <li><a href="/akomodasi/akomodasi.html" class="secondary-nav-link active">Akomodasi</a></li>
                 <li><a href="#" class="secondary-nav-link">Filter</a></li>
                 <li><a href="#" class="secondary-nav-link">Makan</a></li>

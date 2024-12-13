@@ -68,7 +68,7 @@
         <div class="nav-container">
             <ul class="secondary-nav-links">
                 <li><a href="#" class="secondary-nav-link active">Home</a></li>
-                <li><a href="/akomodasi/akomodasi.html" class="secondary-nav-link">Akomodasi</a></li>
+                <li><a href="../akomodasi/akomodasi.php" class="secondary-nav-link">Akomodasi</a></li>
                 <li><a href="#" class="secondary-nav-link">Filter</a></li>
                 <li><a href="#" class="secondary-nav-link">Tempat Populer</a></li>
             </ul>
@@ -136,7 +136,7 @@
     </div>
 
     <div class="header">
-        <h1 class="title">Holiday accommodation<br>recommendations for you</h1>
+        <h1 class="title">INI BAGIAN PAKET<br>PAKAI PHP</h1>
         <div class="search-container">
             <div class="search-bar">
                 <input type="text" placeholder="Search by Location">
@@ -224,7 +224,7 @@
                     <div class="price-details">Including taxes and fees</div>
                     <div class="button-container">
                         <a href="#" class="view-rooms-btn">View Rooms</a>
-                        <a href="#" class="book-btn">Pesan</a>
+                        <a href="pembayaran.php" class="book-btn">Pesan</a>
                     </div>
                 </div>
             </div>
