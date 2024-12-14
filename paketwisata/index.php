@@ -1,30 +1,49 @@
 <?php
 // Koneksi ke database
-$conn = new mysqli("localhost", "root", "", "erd_rootify");
+$db = new mysqli("localhost", "root", "", "erd_rootify"); // Ganti "nama_database" sesuai database Anda
 
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+if ($db->connect_error) {
+    die("Koneksi gagal: " . $db->connect_error);
 }
 
-// Ambil data dari tabel
-$query = "SELECT * FROM tempat_wisata";
-$result = $conn->query($query);
-?>
+// Ambil parameter `nama` dari URL
+if (isset($_GET['nama'])) {
+    $nama = $_GET['nama'];
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Daftar Tempat Wisata</title>
-</head>
-<body>
-    <h1>Daftar Tempat Wisata</h1>
-    <?php while ($row = $result->fetch_assoc()): ?>
-        <div>
-            <h2><?= $row['nama'] ?></h2>
-            <p><?= $row['deskripsi'] ?></p>
-            <img src="<?= $row['url_gambar'] ?>" alt="<?= $row['nama'] ?>" width="200">
-            <a href="detail.php?id=<?= $row['id_wisata'] ?>">View Detail</a>
-        </div>
-    <?php endwhile; ?>
-</body>
-</html>
+    // Query untuk mendapatkan data berdasarkan `nama`
+    $sql = "SELECT * FROM paket WHERE nama = ?";
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param("s", $nama);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        ?>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Detail Paket</title>
+            <link rel="stylesheet" href="style.css"> <!-- Ganti jika ada file CSS -->
+        </head>
+        <body>
+            <h1><?= htmlspecialchars($row['nama']); ?></h1>
+            <p><?= htmlspecialchars($row['deskripsi']); ?></p>
+            <img src="<?= htmlspecialchars($row['gambar']); ?>" alt="Gambar Paket" style="width: 300px;">
+            <p>Jam buka: <?= htmlspecialchars($row['jam_buka']); ?></p>
+            <p>Jam tutup: <?= htmlspecialchars($row['jam_tutup']); ?></p>
+        </body>
+        </html>
+        <?php
+    } else {
+        echo "Paket tidak ditemukan.";
+    }
+} else {
+    echo "Parameter nama tidak ditemukan.";
+}
+
+// Tutup koneksi database
+$db->close();
+?>
