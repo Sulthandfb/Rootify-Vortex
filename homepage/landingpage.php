@@ -223,7 +223,7 @@
                     <div class="price">$110 <span class="price-period">/ Night</span></div>
                     <div class="price-details">Including taxes and fees</div>
                     <div class="button-container">
-                        <a href="../paketwisata/detail.php" class="view-rooms-btn">View Rooms</a>
+                        <a href="detail_paket.php" class="view-rooms-btn">View Rooms</a>
                         <a href="pembayaran.php" class="book-btn">Pesan</a>
                     </div>
                 </div>
