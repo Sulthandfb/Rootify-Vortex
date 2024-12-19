@@ -306,7 +306,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Header with Logo -->
         <header>
             <div class="logo">
-                <img src="tiket-logo.png" alt="tiket.com">
+                <img src="logo1.png" alt="rootify.com">
             </div>
             <div class="promo-button">
                 <button>Promo</button>
@@ -334,9 +334,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="main-content">
                 <!-- Login Prompt -->
                 <div class="login-prompt">
-                    <img src="blibli-icon.png" alt="Blibli Icon" class="blibli-icon">
+                    <img src="logo1.png" alt="Blibli Icon" class="blibli-icon">
                     <div class="login-text">
-                        <p>Log in atau buat akun sekarang untuk dapat <strong>Blibli Tiket Points</strong> dari transaksi ini!</p>
+                        <p>Log in atau buat akun sekarang untuk dapat <strong>Rootify Points</strong> dari transaksi ini!</p>
                         <a href="#" class="login-link">Log in sekarang</a>
                     </div>
                 </div>
@@ -369,7 +369,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <div class="form-group phone-group">
                             <div class="country-code">
-                                <img src="id-flag.png" alt="Indonesia" class="flag-icon">
+                                <img src="" alt="Indonesia" class="flag-icon">
                                 <span>+62</span>
                             </div>
                             <input type="tel" id="phone" name="phone" required placeholder=" ">
