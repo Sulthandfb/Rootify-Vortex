@@ -198,12 +198,12 @@ if (!$data) {
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="title"><?php echo $data['nama']; ?> by Bali Best Adventure</h1>
+            <h1 class="title"><?php echo $data['nama']; ?> by Rootify</h1>
         </div>
 
         <div class="gallery">
             <div class="main-image image-container">
-                <img src="/img/<?php echo $data['url_gambar']; ?>" alt="<?php echo $data['nama']; ?>">
+                <img src="../img/<?php echo $data['url_gambar']; ?>" alt="<?php echo $data['nama']; ?>">
             </div>
             <div class="side-images">
                 <div class="image-container">
