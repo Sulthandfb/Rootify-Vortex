@@ -650,7 +650,6 @@ form button.btn {
 @media (width > 768px) {
   nav {
     padding: 1rem 15rem;
-    position: sticky;
     display: flex;
     width: 100%;
     align-items: center;
