@@ -1,15 +1,5 @@
 <?php
-// db_connect.php
-$hostname = "localhost";
-$username = "root"; // Sesuaikan dengan username database Anda
-$password = "";     // Sesuaikan dengan password database Anda
-$database_name = "erd_rootify"; // Nama database Anda
-
-$db = mysqli_connect($hostname, $username, $password, $database_name);
-
-if (!$db) {
-    die("Koneksi database gagal: " . mysqli_connect_error());
-}
+include 'db_connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +26,7 @@ if (!$db) {
           </div>
         </div>
         <ul class="nav__links" id="nav-links">
-          <li><a href="#home">Home</a></li>
+          <li><a href="../landing/dashboard.php">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#service">Services</a></li>
           <li><a href="#explore">Explore</a></li>
@@ -127,7 +117,7 @@ if (!$db) {
           </div>
       </div>
         <div class="input__group input__btn">
-          <button class="btn" type="submit" name="submit">CHECK OUT</button>
+          <button class="btn" type="submit" name="submit">PLANNING</button>
         </div>
       </form>
     </section>    
@@ -151,7 +141,7 @@ if (!$db) {
       </div>
     </section>
 
-    <!-- <section class="section__container room__container">
+    <section class="section__container room__container">
       <p class="section__subheader">OUR LIVING ROOM</p>
       <h2 class="section__header">The Most Memorable Rest Time Starts Here.</h2>
       <div class="room__grid">
@@ -321,7 +311,8 @@ if (!$db) {
       </div>
     </footer>
 
-    <script src="https://unpkg.com/scrollreveal"></script>  -->
-     <script src="/js/filter.js"></script>
+    <?php include '../chatbot/chatbot.php'; ?>
+    <script src="https://unpkg.com/scrollreveal"></script> 
+    <script src="/js/filter.js"></script>
   </body>
 </html>
